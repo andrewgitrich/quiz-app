@@ -1,0 +1,60 @@
+body{
+	background-color: grey;
+}
+
+
+.initial-state{
+	background-image: url(lynn-swann.jpg);
+	height: 850px;
+}
+
+h1, h4, p{
+	color: grey;
+	letter-spacing: 2px;
+	text-shadow: 5px 2px black;
+}
+
+h1{
+	font-size: 40px;
+}
+h4{
+	font-size: 25px;
+}
+
+.question_1{
+	background-image: url(question1.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 850px;
+}
+
+.question_2{
+	background-image: url(question2pic.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 850px;
+	
+}
+
+.question_3{
+	background-image: url(question3pic.jpeg);
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 850px;
+}
+
+.question_4{
+	background-image: url(question4pic.jpg);
+	background-size: 1200px 500px;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 850px;
+}
+
+.question_5{
+	background-image: url(question5pic.jpg);
+	background-size: 85%;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 850px;
+}
