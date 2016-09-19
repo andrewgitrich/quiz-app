@@ -5,14 +5,14 @@ body {
 }
 
 
-
-	
-
-
 h1, h2, h3, h4, p, li{
 	color: grey;
 	letter-spacing: 2px;
 	text-shadow: 5px 2px black;
+}
+
+li{
+	font-size: 40px;
 }
 
 h1{
