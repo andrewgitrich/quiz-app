@@ -1,25 +1,4 @@
 
-/*
-1. You need array of objects called 
-Questions e.g. var questions = [...]
-2. Each question will have a key called choices which will be array of choices. 
-3. Each question will have the question itself and the correct answer
-
-4. You need to create a function called generate which will generate
-a question from that array. That means that you for example want to
- iterate over the choices array in the first question and append choices
- to the ul, together with the question. 
-
-5. When choices are appended to the ul, you want to have event delegation
- on that ul so when you click on a specific choice, you will compare it if
-  that choice equals the correct answer of that question. If yes, you will go
-   to the new question, otherwise, you will tell user that answer is wrong.
-
-6. To track the state of your app (which question you are currently on), 
-create a global varriable called currentQuestion and set it initially to 0 
-since you want to start at the first question of questions array
-*/
-
 var questions = [
 	{choices: ["1973","1962","1933","1955"],
 	question: "What year were the steelers founded?",
@@ -51,8 +30,27 @@ var score = 0;
 var currentQuestion = 0;
 
 function generateQuestion(){
+
+//if true then add "game over text"
+ if (currentQuestion >= questions.length) {
+        $('h1').text('Game Over');
+//comment on the final score of the game by adding text to an h2
+        if(score > 4) {
+            $('h2').text('You scored ' +  score + '! Well done!');
+        } else if(score < 3) {
+            $('h2').text('Damn man, that is horrible. Did you literally score ' +  score + ' !?!?!?');
+        }
+//clear the question from the ul and score count
+        $('ul').empty();
+        $("h4").empty();
+        $("h3").empty();
+        return;
+    }
+
 //add the first question to the html
 	$('h1').text(questions[currentQuestion].question);
+//add the score count of 0
+	$("h4").text(score);
 //add all the choices to the html
 	for(var i = 0; i < questions[currentQuestion].choices.length; i++){
 		$('ul').append('<li>' + questions[currentQuestion].choices[i]);
@@ -61,6 +59,8 @@ function generateQuestion(){
 
 //answer the question by clicking on an li
 $('ul').on('click', 'li', function(){
+//increments score on click
+	$("h4").text(score);
 //compare what has been clicked to the answer and if true...
 	if($(this).text() === questions[currentQuestion].answer){
 //add 1 to current question
@@ -75,10 +75,16 @@ $('ul').on('click', 'li', function(){
 //if clicked on incorrect answer subtract from score
 	else {
 		score -= 1;
+//decrements core on click
+		$("h4").text(score);
 	}
 });
 
 
-
-
 generateQuestion();
+
+//create an initital state
+	//intro about quiz
+//add buttons for the choices
+//add sounds when game starts and or when buttons clicked
+//change pics for each question
