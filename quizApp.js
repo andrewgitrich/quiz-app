@@ -12,7 +12,7 @@ var questions = [
 	},
 
 	{choices: ["12","15","none","8"],
-	question:"How many cheelerders are on the squad?",
+	question:"How many cheerleaders are on the squad?",
 	answer: "none"
 	},
 
@@ -95,8 +95,7 @@ generateQuestion();
 
 });
 //add buttons for the choices
-//add sounds when game starts and or when buttons clicked
-//change pics for each question
+//add style to restart button
 
 //BUG ALERT! once the game is restarted the second time, the choices only on the 
 	//first question get added again and show 2 of the same sets of choices. 
