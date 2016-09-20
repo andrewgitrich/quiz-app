@@ -34,6 +34,12 @@ function generateQuestion(){
 //if true then add "game over text"
  if (currentQuestion >= questions.length) {
         $("questionBloc").text('Game Over');
+        $("#reStart").text("Press to restart");
+        $("#restart").click(function(){
+        	score = 0;
+        	currentQuestion = 0;
+        });
+
 //comment on the final score of the game by adding text to an h2
         if(score > 4) {
             $('h2').text('You scored ' +  score + '! Well done!');
@@ -84,10 +90,10 @@ $('ul').on('click', 'li', function(){
 	}
 });
 
-$("button").click(function(){
-	generateQuestion();
-	$("#intro").empty();
-});
+
+
+generateQuestion();
+
 //generateQuestion();
 
 //create an initital state
@@ -95,3 +101,5 @@ $("button").click(function(){
 //add buttons for the choices
 //add sounds when game starts and or when buttons clicked
 //change pics for each question
+//reset game by zeroing out variables 
+	//how do we resta
