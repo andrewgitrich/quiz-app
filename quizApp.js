@@ -1,3 +1,4 @@
+$(document).ready(function(){
 
 var questions = [
 	{choices: ["1973","1962","1933","1955"],
@@ -32,11 +33,12 @@ var currentQuestion = 0;
 function generateQuestion(){
 
 //if true then add "game over text"
- if (currentQuestion >= questions.length) {
+ if (currentQuestion >= questions.length)
+{
         $("questionBloc").text('Game Over');
-
         $("#reStart").text("Press to restart");
-        $("#reStart").on("click", function(){
+        $("#reStart").on("click", function()
+        {
         	currentQuestion = 0;
         	score = 0;
         	$("h2").empty();
@@ -50,61 +52,52 @@ function generateQuestion(){
         } else if(score < 3) {
             $('h2').text('Damn man, that is horrible. Did you literally score ' +  score + ' !?!?!?');
         }
+
 //clear the question from the ul and score count
         $('ul').empty();
-        $("h4").empty();
-        $("h3").empty();
+       // $("h4").empty();
+        //$("h3").empty();
         $("#questionBloc").empty();
         return;
     }
 
-//add the first question to the html
+//add the first question, score value, score section and choices to the html
 	$("#questionBloc").text(questions[currentQuestion].question);
-//add the score count of 0
 	$("h4").text(score);
-//add a score section
 	$("h3").text("SCORE");
-//add all the choices to the html
-	for(var i = 0; i < questions[currentQuestion].choices.length; i++){
+	for(var i = 0; i < questions[currentQuestion].choices.length; i++)
+		{
 		$('ul').append('<li>' + questions[currentQuestion].choices[i]);
-	}
+		}
 }
 
 //answer the question by clicking on an li
-$('ul').on('click', 'li', function(){
-//adds score on click
-	$("h4").text(score);
-//compare what has been clicked to the answer and if true...
-	if($(this).text() === questions[currentQuestion].answer){
-//add 1 to current question
+$('ul').on('click', 'li', function()
+{
+	
+	if($(this).text() === questions[currentQuestion].answer)
+		{
+
 		currentQuestion += 1;
-//add 1 to score
 		score += 1;
-//clear the ul by the .empty method
-		$('ul').empty();
-//run the function again
-		generateQuestion();
-	}
-//if clicked on incorrect answer subtract from score
-	else {
-		score -= 1;
-//decrements core on click
 		$("h4").text(score);
-	}
+		$('ul').empty();
+		generateQuestion();
+		}
+	else 
+		{
+		score -= 1;
+		$("h4").text(score);
+		}
 });
-
-
 
 generateQuestion();
 
-//generateQuestion();
-
-//create an initital state
-	//intro about quiz
+});
 //add buttons for the choices
 //add sounds when game starts and or when buttons clicked
 //change pics for each question
-//reset game by zeroing out variables 
-	//how do we resta
-//BUG ALERT! once the game is restarted the second time, the choices on the 
-	//first question double
+
+//BUG ALERT! once the game is restarted the second time, the choices only on the 
+	//first question get added again and show 2 of the same sets of choices. 
+	//then 3 sets on the 3rd restart and so on... 
