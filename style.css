@@ -1,26 +1,32 @@
 body {
 	background-image: url(lynn-swann.jpg);
-	background-color: grey;
-	height: 100%;	
+	background-repeat: no-repeat;
+	background-size: 1400px 750px;
+	font-family: 'Baloo Bhaina', cursive;
+	
 }
 
 
 h1, h2, h3, h4, p, li{
-	color: grey;
 	letter-spacing: 2px;
-	text-shadow: 5px 2px black;
+	text-shadow: 3px 2px #D68840;
+
 }
 
 li{
 	font-size: 40px;
 }
 
-h1{
+h1, h2{
 	font-size: 40px;
 }
-h4{
-	font-size: 25px;
+.scoreBoard{
+	font-size: 35px;
+	position: fixed;
+	top: 0;
+	right: 40px;
 }
+
 
 .question_1{
 	background-image: url(question1.jpg);
