@@ -34,10 +34,14 @@ function generateQuestion(){
 //if true then add "game over text"
  if (currentQuestion >= questions.length) {
         $("questionBloc").text('Game Over');
+
         $("#reStart").text("Press to restart");
-        $("#restart").click(function(){
-        	score = 0;
+        $("#reStart").on("click", function(){
         	currentQuestion = 0;
+        	score = 0;
+        	$("h2").empty();
+        	$("#reStart").empty();
+        	generateQuestion();
         });
 
 //comment on the final score of the game by adding text to an h2
@@ -54,13 +58,11 @@ function generateQuestion(){
     }
 
 //add the first question to the html
-	$("#questionBloc").text(questions[currentQuestion].question);
+	//$("#questionBloc").text(questions[currentQuestion].question);
 //add the score count of 0
 	$("h4").text(score);
 //add a score section
 	$("h3").text("SCORE");
-//remove start button
-	$("button").empty();
 //add all the choices to the html
 	for(var i = 0; i < questions[currentQuestion].choices.length; i++){
 		$('ul').append('<li>' + questions[currentQuestion].choices[i]);
@@ -69,7 +71,7 @@ function generateQuestion(){
 
 //answer the question by clicking on an li
 $('ul').on('click', 'li', function(){
-//increments score on click
+//adds score on click
 	$("h4").text(score);
 //compare what has been clicked to the answer and if true...
 	if($(this).text() === questions[currentQuestion].answer){
