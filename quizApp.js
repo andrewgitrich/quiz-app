@@ -54,11 +54,12 @@ function generateQuestion(){
         $('ul').empty();
         $("h4").empty();
         $("h3").empty();
+        $("#questionBloc").empty();
         return;
     }
 
 //add the first question to the html
-	//$("#questionBloc").text(questions[currentQuestion].question);
+	$("#questionBloc").text(questions[currentQuestion].question);
 //add the score count of 0
 	$("h4").text(score);
 //add a score section
@@ -105,3 +106,5 @@ generateQuestion();
 //change pics for each question
 //reset game by zeroing out variables 
 	//how do we resta
+//BUG ALERT! once the game is restarted the second time, the choices on the 
+	//first question double
