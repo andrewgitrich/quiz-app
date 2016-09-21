@@ -6,14 +6,14 @@ var questions = [
 	answer: "1933"
 	},
 
-	{choices: ["4","9","5","more than any other team!"],
+	{choices: ["4","9","5","6"],
 	question: "How many super bowls have the steelers won?",
-	answer: "more than any other team!"
+	answer: "6"
 	},
 
-	{choices: ["12","15","none","8"],
+	{choices: ["12","15","0","8"],
 	question:"How many cheerleaders are on the squad?",
-	answer: "none"
+	answer: "0"
 	},
 
 	{choices: ["Pnc Park","Steeler Stadium","Staples Center","Heinz Field"],
