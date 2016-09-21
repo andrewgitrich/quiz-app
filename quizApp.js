@@ -22,11 +22,12 @@ var questions = [
 	},
 
 	{choices:["1995","1971","2000","2005"],
-	question: "Last time the Steelers didnt sell out tickes in a home game?",
+	question: "Last time the home stadium wasnt sold out?",
 	answer: "1995"
 	}
 ];
-
+var correct =0;
+var incorrect = 0;
 var score = 0;
 var currentQuestion = 0;
 
@@ -39,19 +40,25 @@ function generateQuestion(){
         $("#reStart").text("Press to restart");
         $("#reStart").on("click", function()
         {
+        	correct = 0;
+        	incorrect = 0;
         	currentQuestion = 0;
-        	score = 0;
         	$("h2").empty();
         	$("#reStart").empty();
         	generateQuestion();
         });
 
 //comment on the final score of the game by adding text to an h2
-        if(score > 4) {
-            $('h2').text('You scored ' +  score + '! Well done!');
-        } else if(score < 3) {
-            $('h2').text('Damn man, that is horrible. Did you literally score ' +  score + ' !?!?!?');
-        }
+        if(correct > 4) 
+        	{
+            $('h2').text('You scored ' +  correct + '! Well done!');
+        	} 
+        	else if (correct === 3 || correct === 4){
+        		$('h2').text('You scored ' + correct + ' not too bad');
+        	}
+        	else if(correct < 3){
+            	$('h2').text('Not so good, you got ' +  correct + ' correct, better luck next time');
+        	}
 
 //clear the question from the ul and score count
         $('ul').empty();
@@ -63,7 +70,8 @@ function generateQuestion(){
 
 //add the first question, score value, score section and choices to the html
 	$("#questionBloc").text(questions[currentQuestion].question);
-	$("h4").text(score);
+	$("#correct").text(correct);
+	$("#incorrect").text(incorrect);
 	$("h3").text("SCORE");
 	for(var i = 0; i < questions[currentQuestion].choices.length; i++)
 		{
@@ -77,17 +85,19 @@ $('ul').on('click', 'li', function()
 	
 	if($(this).text() === questions[currentQuestion].answer)
 		{
-
-		currentQuestion += 1;
-		score += 1;
-		$("h4").text(score);
+		correct += 1;
+		$("#correct").text(correct);
 		$('ul').empty();
+		currentQuestion += 1;
 		generateQuestion();
 		}
 	else 
 		{
-		score -= 1;
-		$("h4").text(score);
+		incorrect += 1;
+		$("#incorrect").text(incorrect);
+		$('ul').empty();
+		currentQuestion += 1;
+		generateQuestion();
 		}
 });
 
