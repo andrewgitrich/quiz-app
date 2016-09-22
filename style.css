@@ -33,10 +33,16 @@ h3, h4{
 h1, h2{
 	font-size: 40px;
 }
+
 .scoreBoard{
 	font-size: 35px;
 	position: fixed;
 	top: 0;
 	right: 40px;
+}
+button{
+	border-radius: 20px;
+	font-size: 20px;
+	padding: 10px 10px;
 }
 
