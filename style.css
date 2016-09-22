@@ -10,7 +10,6 @@ body {
 h1, h2, h3, h4, p, li{
 	letter-spacing: 2px;
 	text-shadow: 3px 2px #D68840;
-
 }
 
 ul{
@@ -24,8 +23,11 @@ li{
 	border: 3px solid black;
 	border-radius: 20px;
 	margin: 10px;
-	position
-	
+}
+
+h3, h4{
+	text-align: center;
+	margin: 0;
 }
 
 h1, h2{

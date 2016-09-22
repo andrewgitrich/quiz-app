@@ -16,7 +16,7 @@ var questions = [
 	answer: "0"
 	},
 
-	{choices: ["Pnc Park","Steeler Stadium","Staples Center","Heinz Field"],
+	{choices: ["Pnc Park","Ford Field","Lang Park","Heinz Field"],
 	question:"The Stadium where the steelers play?",
 	answer: "Heinz Field"
 	},
@@ -28,7 +28,6 @@ var questions = [
 ];
 var correct =0;
 var incorrect = 0;
-var score = 0;
 var currentQuestion = 0;
 
 function generateQuestion(){
@@ -62,8 +61,6 @@ function generateQuestion(){
 
 //clear the question from the ul and score count
         $('ul').empty();
-       // $("h4").empty();
-        //$("h3").empty();
         $("#questionBloc").empty();
         return;
     }
@@ -72,7 +69,7 @@ function generateQuestion(){
 	$("#questionBloc").text(questions[currentQuestion].question);
 	$("#correct").text(correct);
 	$("#incorrect").text(incorrect);
-	$("h3").text("SCORE");
+	
 	for(var i = 0; i < questions[currentQuestion].choices.length; i++)
 		{
 		$('ul').append('<li>' + questions[currentQuestion].choices[i]);
@@ -104,8 +101,9 @@ $('ul').on('click', 'li', function()
 generateQuestion();
 
 });
-//add buttons for the choices
+
 //add style to restart button
+// add correct and incorrect label
 
 //BUG ALERT! once the game is restarted the second time, the choices only on the 
 	//first question get added again and show 2 of the same sets of choices. 
