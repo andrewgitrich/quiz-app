@@ -38,44 +38,5 @@ h1, h2{
 	position: fixed;
 	top: 0;
 	right: 40px;
-
 }
 
-
-.question_1{
-	background-image: url(question1.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
-	height: 850px;
-}
-
-.question_2{
-	background-image: url(question2pic.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
-	height: 850px;
-	
-}
-
-.question_3{
-	background-image: url(question3pic.jpeg);
-	background-repeat: no-repeat;
-	background-position: center;
-	height: 850px;
-}
-
-.question_4{
-	background-image: url(question4pic.jpg);
-	background-size: 1200px 500px;
-	background-repeat: no-repeat;
-	background-position: center;
-	height: 850px;
-}
-
-.question_5{
-	background-image: url(question5pic.jpg);
-	background-size: 85%;
-	background-repeat: no-repeat;
-	background-position: center;
-	height: 850px;
-}
